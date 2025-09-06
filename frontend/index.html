@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Connect - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="logo">🩸</div>
+                    <span class="brand-text">Blood Donor Connect</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">Dashboard</a>
+                    <a href="register.html" class="nav-link">Register</a>
+                    <a href="search.html" class="nav-link">Search Donors</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h1 class="welcome-title">Blood Donor Dashboard</h1>
+                <p class="welcome-subtitle">Connecting lives through the gift of blood donation</p>
+            </section>
+
+            <!-- Statistics Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card lives-saved">
+                        <div class="stat-icon">❤️</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="livesSaved">1,247</h3>
+                            <p class="stat-label">Lives Saved</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card active-donors">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="activeDonors">892</h3>
+                            <p class="stat-label">Active Donors</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card success-rate">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="successRate">94.7%</h3>
+                            <p class="stat-label">Success Rate</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card emergency-status">
+                        <div class="stat-icon">🚨</div>
+                        <div class="stat-content">
+                            <h3 class="stat-number" id="emergencyStatus">3</h3>
+                            <p class="stat-label">Emergency Requests</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Dashboard Grid -->
+            <section class="dashboard-grid">
+                <!-- Emergency Alert Banner -->
+                <div class="emergency-banner" id="emergencyBanner" style="grid-column: 1 / -1;">
+                    <div class="emergency-text">🚨 URGENT: O- Blood needed at City Hospital - Contact immediately!</div>
+                </div>
+
+                <!-- Blood Compatibility Checker -->
+                <div class="dashboard-card compatibility-checker" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <h2 class="card-title">🩸 Blood Compatibility Checker</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="compatibility-title">Select a blood type to see compatibility</div>
+                        <div class="compatibility-grid" id="compatibilityGrid">
+                            <div class="blood-type-card" data-type="A+">A+</div>
+                            <div class="blood-type-card" data-type="A-">A-</div>
+                            <div class="blood-type-card" data-type="B+">B+</div>
+                            <div class="blood-type-card" data-type="B-">B-</div>
+                            <div class="blood-type-card" data-type="AB+">AB+</div>
+                            <div class="blood-type-card" data-type="AB-">AB-</div>
+                            <div class="blood-type-card" data-type="O+">O+</div>
+                            <div class="blood-type-card" data-type="O-">O-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urgent Blood Requests -->
+                <div class="dashboard-card urgent-requests">
+                    <div class="card-header">
+                        <h2 class="card-title">Urgent Blood Requests</h2>
+                        <span class="view-all">View All</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="request-list" id="urgentRequests">
+                            <div class="request-item">
+                                <div class="request-info">
+                                    <div class="request-type">A+ Blood Type</div>
+                                    <div class="request-location">Mumbai General Hospital</div>
+                                    <div class="request-time">2 hours ago</div>
+                                </div>
+                                <div class="criticality-label critical">Critical</div>
+                            </div>
+                            
+                            <div class="request-item">
+                                <div class="request-info">
+                                    <div class="request-type">O- Blood Type</div>
+                                    <div class="request-location">Delhi AIIMS</div>
+                                    <div class="request-time">4 hours ago</div>
+                                </div>
+                                <div class="criticality-label urgent">Urgent</div>
+                            </div>
+                            
+                            <div class="request-item">
+                                <div class="request-info">
+                                    <div class="request-type">B+ Blood Type</div>
+                                    <div class="request-location">Chennai Apollo Hospital</div>
+                                    <div class="request-time">6 hours ago</div>
+                                </div>
+                                <div class="criticality-label moderate">Moderate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donor Rewards -->
+                <div class="dashboard-card donor-rewards">
+                    <div class="card-header">
+                        <h2 class="card-title">🏆 Top Donors Leaderboard</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="leaderboard" id="donorLeaderboard">
+                            <div class="leaderboard-item">
+                                <div class="leaderboard-rank">1</div>
+                                <div class="leaderboard-info">
+                                    <div class="leaderboard-name">Amit Sharma</div>
+                                    <div class="leaderboard-donations">25 donations</div>
+                                </div>
+                                <div class="leaderboard-badge">Hero</div>
+                            </div>
+                            
+                            <div class="leaderboard-item">
+                                <div class="leaderboard-rank">2</div>
+                                <div class="leaderboard-info">
+                                    <div class="leaderboard-name">Priya Patel</div>
+                                    <div class="leaderboard-donations">18 donations</div>
+                                </div>
+                                <div class="leaderboard-badge">Champion</div>
+                            </div>
+                            
+                            <div class="leaderboard-item">
+                                <div class="leaderboard-rank">3</div>
+                                <div class="leaderboard-info">
+                                    <div class="leaderboard-name">Rajesh Kumar</div>
+                                    <div class="leaderboard-donations">15 donations</div>
+                                </div>
+                                <div class="leaderboard-badge">Star</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2 class="card-title">📊 Live Activity Feed</h2>
+                        <div class="live-indicator">🔴 LIVE</div>
+                    </div>
+                    <div class="card-content">
+                        <!-- Donation Timeline -->
+                        <div class="donation-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon">💉</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Blood Donation Completed</div>
+                                    <div class="timeline-description">Amit Sharma donated A+ blood at Mumbai Hospital</div>
+                                </div>
+                                <div class="timeline-time">2 min ago</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">🏥</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">Emergency Request Fulfilled</div>
+                                    <div class="timeline-description">O- blood delivered to Delhi AIIMS</div>
+                                </div>
+                                <div class="timeline-time">15 min ago</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">👤</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">New Donor Registered</div>
+                                    <div class="timeline-description">Priya Singh joined from Bangalore</div>
+                                </div>
+                                <div class="timeline-time">1 hour ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-list" id="recentActivity">
+                            <!-- Activity items will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Floating Action Button -->
+        <button class="fab" onclick="window.location.href='register.html'" title="Quick Register">
+            ➕
+        </button>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

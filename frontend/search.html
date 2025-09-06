@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Connect - Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation Header -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="logo">🩸</div>
+                    <span class="brand-text">Blood Donor Connect</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Dashboard</a>
+                    <a href="register.html" class="nav-link">Register</a>
+                    <a href="search.html" class="nav-link active">Search Donors</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-header">
+                        <h1 class="search-title">Find Blood Donors</h1>
+                        <p class="search-subtitle">Search for available donors by blood type and location</p>
+                    </div>
+
+                    <!-- Search Filters -->
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <label class="filter-label" for="filterBloodGroup">Blood Group</label>
+                            <select id="filterBloodGroup" class="filter-select">
+                                <option value="">All Blood Groups</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label" for="filterCity">City</label>
+                            <input type="text" id="filterCity" class="filter-input" placeholder="Enter city name">
+                        </div>
+
+                        <div class="filter-group">
+                            <label class="filter-label" for="filterAvailability">Availability</label>
+                            <select id="filterAvailability" class="filter-select">
+                                <option value="">All Donors</option>
+                                <option value="available">Available Now</option>
+                                <option value="recent">Donated Recently</option>
+                            </select>
+                        </div>
+
+                        <button id="searchButton" class="search-button">Search Donors</button>
+                        <button id="exportButton" class="search-button" style="background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));">Export CSV</button>
+                    </div>
+
+                    <!-- Search Results -->
+                    <div class="search-results">
+                        <div class="results-header">
+                            <h2 class="results-title">Available Donors</h2>
+                            <span class="results-count" id="resultsCount">0 donors found</span>
+                        </div>
+
+                        <div class="results-table-container">
+                            <table class="results-table" id="resultsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Blood Group</th>
+                                        <th>Age</th>
+                                        <th>Gender</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Phone</th>
+                                        <th>Last Donation</th>
+                                        <th>Status</th>
+                                        <th>Availability</th>
+                                        <th>Contact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsTableBody">
+                                    <!-- Search results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="noResults" class="no-results" style="display: none;">
+                            <div class="no-results-icon">🔍</div>
+                            <h3 class="no-results-title">No donors found</h3>
+                            <p class="no-results-text">Try adjusting your search filters or expanding your search criteria.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="dashboard-card" style="margin-top: var(--spacing-xl);">
+                        <div class="card-header">
+                            <h2 class="card-title">📈 Search Statistics</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                                <div class="stat-mini">
+                                    <div class="stat-mini-number" id="totalSearched">0</div>
+                                    <div class="stat-mini-label">Total Found</div>
+                                </div>
+                                <div class="stat-mini">
+                                    <div class="stat-mini-number" id="availableNow">0</div>
+                                    <div class="stat-mini-label">Available Now</div>
+                                </div>
+                                <div class="stat-mini">
+                                    <div class="stat-mini-number" id="verifiedDonors">0</div>
+                                    <div class="stat-mini-label">Verified</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

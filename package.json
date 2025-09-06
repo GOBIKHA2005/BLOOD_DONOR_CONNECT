@@ -1,0 +1,23 @@
+{
+  "name": "blood-donor-management",
+  "version": "1.0.0",
+  "description": "Blood Donor Management System",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["blood-donor", "healthcare", "management"],
+  "author": "Blood Donor Connect",
+  "license": "MIT"
+}
